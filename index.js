@@ -6,7 +6,7 @@ const body_parser = require("body-parser");
 // parse JSON (application/json content-type)
 server.use(body_parser.json());
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 
 // << db setup >>
 const db = require("./db");
@@ -27,7 +27,7 @@ db.initialize(dbName, collectionName, function (dbCollection) { // successCallba
       const item = request.body;
           //const item={"codigo":"0001","descripcion":"este es un pago","codcurso":"000","codalumno":"001"}
       dbCollection.insertOne(item, (error, result) => { 
-         const msg="data was succefull added"
+         const msg="Payment  was succefull added"
          response.json(msg)
       });
    });
